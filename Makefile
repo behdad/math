@@ -18,7 +18,7 @@ venv: venv/touchfile
 
 build.stamp: venv .init.stamp sources/config*.yaml $(SOURCES)
 	rm -rf fonts
-	(for config in sources/config*.yaml; do . venv/bin/activate; python3 -m notobuilder $$config; done)
+	(for config in sources/config*.yaml; do . venv/bin/activate; python3 -m notobuilder --otfs $$config; done)
 	# Special math action!
 	. venv/bin/activate; python3 scripts/apply-ttx.py
 	touch build.stamp

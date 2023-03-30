@@ -3,7 +3,7 @@ import glob
 
 # The TTX file isn't necessarily sorted by our glyph order,
 # so we have to sort it while applying
-for fontfile in glob.glob("fonts/**/*.*tf", recursive=True):
+for fontfile in glob.glob("fonts/**/???/*.*tf", recursive=True):
     font = TTFont(fontfile)
     glyphmap = font.getReverseGlyphMap()
 
